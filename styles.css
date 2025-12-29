@@ -1,0 +1,187 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", "Cairo", "Tajawal", system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+
+  direction: rtl;
+  text-align: right;
+}
+
+.card {
+  width: min(760px, 92vw);
+  background: #111c33;
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: 0.2px;
+}
+
+/* ---- اللوحات / التبويبات ---- */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  justify-content: flex-start;
+}
+
+.tab {
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  background: rgba(226, 232, 240, 0.06);
+  color: #e2e8f0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 750;
+  user-select: none;
+}
+
+.tab[aria-selected="true"] {
+  background: rgba(37, 99, 235, 0.9);
+  border-color: rgba(37, 99, 235, 0.7);
+}
+
+.tab:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ---- العرض الرئيسي ---- */
+.number {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 14px 0 12px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 14px;
+  background: rgba(226, 232, 240, 0.06);
+  border: 1px dashed rgba(226, 232, 240, 0.18);
+}
+
+.question {
+  min-height: 64px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(226, 232, 240, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  font-size: 26px;
+  text-align:center;
+  font-weight:bold;
+  line-height: 1.6;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.btn {
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  background: rgba(226, 232, 240, 0.06);
+  color: #e2e8f0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.btn:hover { filter: brightness(1.08); }
+
+.btn.primary {
+  background: #2563eb;
+  border-color: rgba(37, 99, 235, 0.6);
+}
+
+.btn.danger {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(239, 68, 68, 0.55);
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* ===== زر ابدأ/إيقاف الكبير ===== */
+.big-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 26px 20px;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  text-transform: none;
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.45),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.big-btn:hover {
+  transform: translateY(-1px);
+}
+
+.big-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 6px 16px rgba(37, 99, 235, 0.35),
+    inset 0 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* حالة الإيقاف */
+.big-btn.stop {
+  background: #dc2626;
+  border-color: rgba(220, 38, 38, 0.8);
+  box-shadow:
+    0 10px 30px rgba(220, 38, 38, 0.45),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* شريط أدوات علوي */
+.topbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+  justify-content: flex-start;
+}
+
+.toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  background: rgba(226, 232, 240, 0.06);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+}
+
+.toggle input {
+  width: 18px;
+  height: 18px;
+}
+
