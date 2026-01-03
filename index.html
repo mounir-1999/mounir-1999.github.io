@@ -28,17 +28,29 @@
     <!-- اللوحات / التبويبات -->
     <div class="tabs" id="tabs" role="tablist" aria-label="لوحات الأسئلة"></div>
 
+    <!-- نسخ الأسئلة داخل اللوحة -->
+    <div class="tabs" id="variantTabs" role="tablist" aria-label="نسخ الأسئلة" hidden></div>
+
     <div class="number" id="number">—</div>
     <div class="question" id="question">اختر لوحة ثم اضغط ابدأ</div>
 
+    <!-- الإجابة (تظهر عند الضغط على زر "إظهار الإجابة") -->
+    <div class="question" id="answer" hidden></div>
+
     <div class="controls">
       <button id="mainBtn" class="btn primary big-btn">ابدأ</button>
+      <button id="showAnswerBtn" class="btn" disabled>إظهار الإجابة</button>
       <button id="resetBtn" class="btn danger">إعادة تعيين اللوحة</button>
       <button id="resetAllBtn" class="btn">إعادة تعيين الجميع</button>
     </div>
 
     <div class="status" id="status"></div>
   </main>
+
+<!-- شريط مؤقت أسفل الشاشة (يظهر عند عرض السؤال) -->
+<div id="timerBorder" hidden aria-hidden="true">
+  <div id="timerBar"></div>
+</div>
 
   <script src="set1.js"></script>
   <script src="set2.js"></script>

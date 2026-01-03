@@ -185,3 +185,32 @@ h1 {
   height: 18px;
 }
 
+/* =====================================================
+   ⏱️  إطار مؤقت يغطي الشاشة بالكامل
+   - يظهر فقط عند إضافة class = run
+   - مدة الحركة تؤخذ من المتغير: --timer-duration (مثلاً 15s)
+   ===================================================== */
+
+
+#timerBorder {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 20px;              /* عدّل السمك هنا */
+  background: rgba(226, 232, 240, 0.14);  /* لون الخلفية */
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#timerBorder[hidden] {
+  display: none !important;
+}
+
+#timerBar {
+  height: 100%;
+  width: 100%;
+  background: #22c55e;       /* لون الشريط */
+  transform-origin: right center; /* RTL: ينقص من اليمين لليسار */
+}
