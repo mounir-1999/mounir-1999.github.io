@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MCQ</title>
+  <link rel="stylesheet" href="mcq.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="title">اختبار اختيار من متعدد</div>
+        <div class="sub" id="statusText">اختر مجموعة ثم اضغط بدء</div>
+      </div>
+
+      <div class="controls">
+        <select id="setSelect"></select>
+        <button id="startBtn" type="button">بدء</button>
+        <button id="checkBtn" type="button" disabled>تحقّق</button>
+        <button id="restartBtn" type="button" style="display:none;">إعادة</button>
+      </div>
+    </header>
+
+    <section class="summary" id="summary" style="display:none;">
+      <div class="pill" id="sumAnswered">تمت الإجابة: 0</div>
+      <div class="pill" id="sumCorrect">إجابات صحيحة: 0</div>
+      <div class="pill" id="sumScore">النقاط: 0</div>
+      <div class="pill" id="sumPercent">النسبة: 0%</div>
+    </section>
+
+    <section id="quiz" class="quiz"></section>
+
+    <section id="result" class="result" style="display:none;"></section>
+  </main>
+
+  <script src="mcq-data.js"></script>
+  <script src="mcq.js"></script>
+</body>
+</html>

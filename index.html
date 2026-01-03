@@ -3,59 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>اختيار سؤال عشوائي</title>
+  <title>الرئيسية</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body{min-height:100vh;display:grid;place-items:center}
+    .home{width:min(980px,92vw)}
+    .home h1{text-align:center;margin:0 0 14px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    @media(max-width:740px){.grid{grid-template-columns:1fr}}
+    .cardlink{display:block;text-decoration:none;color:inherit}
+    .homecard{
+      border-radius:18px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.08);
+      transition:transform .12s ease, background .12s ease;
+    }
+    .homecard:hover{transform:translateY(-2px);background:rgba(255,255,255,.10)}
+    .homecard h2{margin:0 0 8px;font-size:1.25rem}
+    .homecard p{margin:0;opacity:.9;line-height:1.65}
+    .hint{margin-top:12px;text-align:center;opacity:.75;font-size:.95rem}
+  </style>
 </head>
 <body>
-  <main class="card">
-    <h1>اختيار سؤال عشوائي</h1>
+  <main class="home">
+    <h1>اختر الوضع</h1>
+    <div class="grid">
+      <a class="cardlink" href="random.html" aria-label="الأسئلة العشوائية">
+        <div class="homecard">
+          <h2>🎲 الأسئلة العشوائية</h2>
+          <p>اختيار أسئلة من اللوحات (A/B) مع مؤقّت وصوت حسب إعداداتك الحالية.</p>
+        </div>
+      </a>
 
-    <!-- شريط أدوات صغير -->
-    <div class="topbar">
-      <button id="fullscreenBtn" class="btn">ملء الشاشة</button>
-
-      <label class="toggle">
-        <input id="soundToggle" type="checkbox" checked />
-        <span>الصوت</span>
-      </label>
-
-      <label class="toggle">
-        <input id="vibrateToggle" type="checkbox" checked />
-        <span>الاهتزاز</span>
-      </label>
+      <a class="cardlink" href="mcq.html" aria-label="أسئلة اختيار من متعدد">
+        <div class="homecard">
+          <h2>📝 اختيار من متعدد (MCQ)</h2>
+          <p>أسئلة بأربع خيارات مع حساب تلقائي للنتيجة في النهاية.</p>
+        </div>
+      </a>
     </div>
-
-    <!-- اللوحات / التبويبات -->
-    <div class="tabs" id="tabs" role="tablist" aria-label="لوحات الأسئلة"></div>
-
-    <!-- نسخ الأسئلة داخل اللوحة -->
-    <div class="tabs" id="variantTabs" role="tablist" aria-label="نسخ الأسئلة" hidden></div>
-
-    <div class="number" id="number">—</div>
-    <div class="question" id="question">اختر لوحة ثم اضغط ابدأ</div>
-
-    <!-- الإجابة (تظهر عند الضغط على زر "إظهار الإجابة") -->
-    <div class="question" id="answer" hidden></div>
-
-    <div class="controls">
-      <button id="mainBtn" class="btn primary big-btn">ابدأ</button>
-      <button id="showAnswerBtn" class="btn" disabled>إظهار الإجابة</button>
-      <button id="resetBtn" class="btn danger">إعادة تعيين اللوحة</button>
-      <button id="resetAllBtn" class="btn">إعادة تعيين الجميع</button>
-    </div>
-
-    <div class="status" id="status"></div>
+    <div class="hint">يمكنك العودة إلى هذه الصفحة بالضغط على “الرئيسية” داخل صفحات الاختبار.</div>
   </main>
-
-<!-- شريط مؤقت أسفل الشاشة (يظهر عند عرض السؤال) -->
-<div id="timerBorder" hidden aria-hidden="true">
-  <div id="timerBar"></div>
-</div>
-
-  <script src="set1.js"></script>
-  <script src="set2.js"></script>
-  <script src="set3.js"></script>
-  <script src="set4.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
